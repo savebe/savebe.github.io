@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://savebe.github.io/savebe.github.io/sitemap.xml
+Sitemap: https://savebe.github.io/sitemap.xml
