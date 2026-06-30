@@ -1,0 +1,49 @@
+{%- comment -%}
+Card for one recipe in the grid on _pages/recipes.md.
+Expects a `recipe` variable (the collection item) in scope, like _includes/projects.liquid.
+The data-* attributes on the wrapping .recipe-col are read by assets/js/recipes.js
+for client-side sort / meal-type filter / search.
+{%- endcomment -%}
+{%- capture search_terms -%}
+{{ recipe.title }} {{ recipe.meal_type }} {% if recipe.ingredients %}{{ recipe.ingredients | join: ' ' }}{% endif %} {% if recipe.tags %}{{ recipe.tags | join: ' ' }}{% endif %}
+{%- endcapture -%}
+<div class="col recipe-col"
+  data-rating="{{ recipe.rating | default: 0 }}"
+  data-taste="{{ recipe.taste | default: 0 }}"
+  data-effort="{{ recipe.effort | default: 0 }}"
+  data-date="{{ recipe.date | date: '%Y-%m-%d' }}"
+  data-title="{{ recipe.title | downcase | escape }}"
+  data-meal="{{ recipe.meal_type | downcase }}"
+  data-search="{{ search_terms | downcase | strip | escape }}">
+  <a href="{{ recipe.url | relative_url }}">
+    <div class="card h-100 hoverable recipe-card">
+      {% if recipe.img %}
+        {%
+          include figure.liquid
+          loading="eager"
+          path=recipe.img
+          sizes="350px"
+          alt=recipe.title
+          class="card-img-top recipe-card-img"
+        %}
+      {% endif %}
+      <div class="card-body">
+        <h2 class="card-title recipe-card-title">{{ recipe.title }}</h2>
+        <div class="recipe-card-meta">
+          {% if recipe.meal_type %}
+            <span class="meal-badge meal-{{ recipe.meal_type | downcase }}">{{ recipe.meal_type | capitalize }}</span>
+          {% endif %}
+          {% if recipe.rating %}
+            <span class="card-rating"><i class="fa-solid fa-star"></i> {{ recipe.rating }}/10</span>
+          {% endif %}
+        </div>
+        {% if recipe.taste %}
+          <div class="card-taste">
+            <span class="card-taste-label">Taste</span>
+            <span class="stars">{% include stars.liquid value=recipe.taste %}</span>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </a>
+</div>

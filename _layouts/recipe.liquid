@@ -1,0 +1,270 @@
+---
+layout: default
+---
+{% assign date_added = page.date | date: '%-d %B %Y' %}
+
+<div class="post recipe">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-meta">
+      {% if page.date %}
+        <i class="fa-solid fa-calendar fa-sm"></i> {{ date_added }}
+      {% endif %}
+      {% if page.meal_type %}
+        &nbsp;&middot;&nbsp; <i class="fa-solid fa-utensils fa-sm"></i> {{ page.meal_type | capitalize }}
+      {% endif %}
+      {% if page.servings %}
+        &nbsp;&middot;&nbsp; <i class="fa-solid fa-bowl-food fa-sm"></i> {{ page.servings }} servings
+      {% endif %}
+      {% if page.prep_time %}
+        &nbsp;&middot;&nbsp; <i class="fa-solid fa-clock fa-sm"></i> {{ page.prep_time }}
+      {% endif %}
+    </p>
+    {% if page.tags %}
+      <p class="post-tags">
+        {% for tag in page.tags %}
+          <span class="recipe-tag"><i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}</span>
+        {% endfor %}
+      </p>
+    {% endif %}
+    <hr>
+  </header>
+
+  <article>
+    {% if page.img %}
+      <div class="recipe-hero">
+        {% include figure.liquid loading="eager" path=page.img alt=page.title class="img-fluid rounded z-depth-1" %}
+      </div>
+    {% endif %}
+
+    <!-- Ratings -->
+    {% if page.rating or page.taste or page.effort %}
+      <div class="recipe-ratings">
+        {% if page.rating %}
+          <div class="rating-overall">
+            <div><span class="rating-number">{{ page.rating }}</span><span class="rating-denom">/10</span></div>
+            <div class="rating-label">Overall</div>
+          </div>
+        {% endif %}
+        <div class="rating-stars-group">
+          {% if page.taste %}
+            <div class="rating-row">
+              <span class="rating-name">Taste</span>
+              <span class="stars">{% include stars.liquid value=page.taste %}</span>
+            </div>
+          {% endif %}
+          {% if page.effort %}
+            <div class="rating-row">
+              <span class="rating-name">Effort</span>
+              <span class="stars">{% include stars.liquid value=page.effort %}</span>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+
+    <!-- Ingredients: a flat list, or a grouped map like {Main: [...], Spices: [...]} -->
+    {% if page.ingredients %}
+      <h2>Ingredients</h2>
+      {% assign ing_first = page.ingredients.first %}
+      {% if ing_first[1] %}
+        {% comment %} Grouped: ingredients is a map of group name -> list of items {% endcomment %}
+        {% for group in page.ingredients %}
+          <h4 class="ingredient-group">{{ group[0] }}</h4>
+          <ul class="recipe-ingredients">
+            {% for item in group[1] %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        {% endfor %}
+      {% else %}
+        {% comment %} Flat list of ingredients {% endcomment %}
+        <ul class="recipe-ingredients">
+          {% for item in page.ingredients %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endif %}
+
+    <!-- Steps -->
+    {% if page.steps %}
+      <h2>Steps</h2>
+      <ol class="recipe-steps">
+        {% for step in page.steps %}
+          <li>{{ step }}</li>
+        {% endfor %}
+      </ol>
+    {% endif %}
+
+    {% if content != '' %}
+      <h2>Notes</h2>
+      {{ content }}
+    {% endif %}
+
+    <!-- Nutrition (expandable, at the end) -->
+    {% if page.nutrition %}
+      <details class="recipe-nutrition-toggle">
+        <summary>
+          Nutrition <span class="nutrition-hint">per serving</span>
+          <i class="fa-solid fa-chevron-down fa-sm nutrition-chevron" aria-hidden="true"></i>
+        </summary>
+        <table class="table recipe-nutrition">
+          <tbody>
+            {% if page.nutrition.calories %}<tr><th>Calories</th><td>{{ page.nutrition.calories }}</td></tr>{% endif %}
+            {% if page.nutrition.protein %}<tr><th>Protein</th><td>{{ page.nutrition.protein }}</td></tr>{% endif %}
+            {% if page.nutrition.carbs %}<tr><th>Carbs</th><td>{{ page.nutrition.carbs }}</td></tr>{% endif %}
+            {% if page.nutrition.fat %}<tr><th>Fat</th><td>{{ page.nutrition.fat }}</td></tr>{% endif %}
+          </tbody>
+        </table>
+      </details>
+    {% endif %}
+
+    {% if page.source %}
+      <p class="recipe-source">
+        Recipe adapted from
+        {% if page.source_url %}
+          <a href="{{ page.source_url }}" target="_blank" rel="noopener noreferrer">{{ page.source }}</a>
+        {% else %}
+          {{ page.source }}
+        {% endif %}
+      </p>
+    {% endif %}
+
+    <p class="recipe-back"><a href="{{ '/recipes/' | relative_url }}">&larr; Back to all recipes</a></p>
+  </article>
+</div>
+
+<style>
+  .recipe-hero {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .recipe-hero img {
+    max-height: 420px;
+    width: auto;
+  }
+  .recipe-tag {
+    margin-right: 0.6rem;
+    color: var(--global-text-color-light);
+    font-size: 0.9rem;
+  }
+  .recipe-ratings {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.75rem;
+    margin: 1rem 0 2rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 8px;
+    background-color: var(--global-card-bg-color);
+  }
+  .rating-overall {
+    text-align: center;
+    line-height: 1.1;
+  }
+  .rating-overall .rating-number {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--global-theme-color);
+  }
+  .rating-overall .rating-denom {
+    font-size: 1.1rem;
+    color: var(--global-text-color-light);
+  }
+  .rating-overall .rating-label {
+    margin-top: 0.2rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--global-text-color-light);
+  }
+  .rating-stars-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .rating-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .rating-row .rating-name {
+    width: 4rem;
+    color: var(--global-text-color-light);
+    font-size: 0.9rem;
+  }
+  .recipe-ratings .stars i {
+    color: var(--global-theme-color);
+  }
+  .recipe-nutrition {
+    max-width: 320px;
+  }
+  .recipe-nutrition th {
+    width: 55%;
+    font-weight: 600;
+  }
+  .recipe-nutrition-toggle {
+    margin: 2rem 0 0.5rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 8px;
+    padding: 0.5rem 1.1rem;
+  }
+  .recipe-nutrition-toggle summary {
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  .recipe-nutrition-toggle summary::-webkit-details-marker {
+    display: none;
+  }
+  .nutrition-hint {
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: var(--global-text-color-light);
+    margin-left: 0.4rem;
+  }
+  .nutrition-chevron {
+    margin-left: auto;
+    transition: transform 0.15s ease-in-out;
+  }
+  .recipe-nutrition-toggle[open] .nutrition-chevron {
+    transform: rotate(180deg);
+  }
+  .recipe-nutrition-toggle .recipe-nutrition {
+    margin-top: 0.85rem;
+    margin-bottom: 0.25rem;
+  }
+  .recipe-steps li {
+    margin-bottom: 0.6rem;
+  }
+  .recipe-ingredients li {
+    margin-bottom: 0.25rem;
+  }
+  .ingredient-group {
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--global-text-color-light);
+    margin: 1.1rem 0 0.4rem;
+  }
+  .ingredient-group + .recipe-ingredients {
+    margin-top: 0;
+  }
+  .recipe-source {
+    margin-top: 2.5rem;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--global-text-color-light);
+  }
+  .recipe-source + .recipe-back {
+    margin-top: 0.75rem;
+  }
+  .recipe-back {
+    margin-top: 2.5rem;
+  }
+</style>

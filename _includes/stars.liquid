@@ -1,0 +1,13 @@
+{%- comment -%}
+Renders a 1-5 star rating from a numeric value (supports halves).
+Usage: {% include stars.liquid value=page.taste %}
+Reuses the same approach as _layouts/book-review.liquid.
+{%- endcomment -%}
+{%- assign _v = include.value | default: 0 -%}
+{%- assign _full = _v | floor -%}
+{%- assign _half = _v | minus: _full -%}
+{%- assign _empty = 5 | minus: _full -%}
+{%- if _half > 0 -%}{%- assign _empty = _empty | minus: 1 -%}{%- endif -%}
+{%- for i in (1.._full) -%}<i class="fa-solid fa-star"></i>{%- endfor -%}
+{%- if _half > 0 -%}<i class="fa-solid fa-star-half-stroke"></i>{%- endif -%}
+{%- for i in (1.._empty) -%}<i class="fa-regular fa-star"></i>{%- endfor -%}
