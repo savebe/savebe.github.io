@@ -55,6 +55,11 @@ ninja.data = [{
           description: "",
           section: "Recipes",handler: () => {
               window.location.href = "/recipes/marry-me-chicken/";
+            },},{id: "recipes-spinach-zucchini-pasta-with-salmon",
+          title: 'Spinach Zucchini Pasta with Salmon',
+          description: "",
+          section: "Recipes",handler: () => {
+              window.location.href = "/recipes/spinach-zucchini-pasta-with-salmon/";
             },},{
         id: 'social-github',
         title: 'GitHub',
