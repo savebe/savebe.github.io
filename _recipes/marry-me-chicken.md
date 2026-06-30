@@ -37,7 +37,7 @@ steps:
   - Place a large rimmed pan or pot over high heat. Add the sun-dried tomato oil and seasoned chicken. Cook for 4-5 minutes, mixing occasionally (work in batches if the pan isn't large enough).
   - While the chicken is cooking, fry the zucchini and bell peppers in a separate pan until slightly softened and lightly browned.
   - Turn the heat down to medium-low. Add the drained pasta to the chicken and pour over the cottage cheese mix. Add the fried zucchini and bell peppers, stir to combine, and cook for 1-2 minutes. Add the spinach and cook for 1 minute until wilted. Remove from the heat.
-  - Portion into 5 meal-prep containers. Garnish with Parmigiano Reggiano and cracked black pepper. Dig in.
+  - Portion into 5 meal-prep containers. Garnish with Parmigiano Reggiano and cracked black pepper.
 tags: [pasta, meal-prep]
 ---
 
