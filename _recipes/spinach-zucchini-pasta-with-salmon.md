@@ -7,9 +7,9 @@ img: assets/img/recipes/lachspasta.jpeg # replace with your own photo in assets/
 meal_type: 
 servings: 5
 prep_time: 40 min
-effort: 9
-taste: 8
-rating: 3.5
+effort: 5
+taste: 3.5
+rating: 6
 nutrition: # per serving
 ingredients:
   Main:
