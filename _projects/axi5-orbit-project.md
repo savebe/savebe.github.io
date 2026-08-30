@@ -74,17 +74,7 @@ After commissioning, all five axes could be controlled individually and in coord
 
 These tests also helped identify areas for further development, particularly the positioning accuracy and mechanical behaviour of the A-axis.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Projects/AXI5_ORBIT/a-axis-angle-error.jpg" title="A-axis angle deviation" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Projects/AXI5_ORBIT/thermal-behaviour.jpg" title="Thermal behaviour of bed and nozzle" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Selected measurements from the validation of the prototype.
-</div>
+
 
 ## First prints
 
