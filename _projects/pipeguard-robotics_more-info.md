@@ -21,9 +21,7 @@ tags:
     PipeGuard — a prototype robot for autonomous inspection of industrial pipe systems.
 </div>
 
-PipeGuard is a compact **pipe inspection robot** developed to inspect areas that are difficult, dangerous or time-consuming to access manually.
-
-The robot moves through a pipe while providing **live video and sensor feedback** to the operator. The goal was to develop a complete prototype combining mechanical design, embedded control, image processing and communication into one inspection system.
+PipeGuard is a compact **pipe inspection robot** developed for inspecting areas that are difficult, dangerous or time-consuming to access manually. The robot moves through the pipe while providing live video and sensor feedback to the operator. The goal of the project was to build a complete inspection prototype.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -39,11 +37,7 @@ The robot moves through a pipe while providing **live video and sensor feedback*
 
 ## The robot
 
-PipeGuard uses a compact articulated structure designed to navigate through pipe networks and around tight bends.
-
-An adjustable clamping mechanism presses the robot against the pipe wall and allows it to adapt to different pipe diameters. Omnidirectional wheels provide mobility, while rubber elements improve contact and stability.
-
-A camera with integrated lighting provides visibility inside dark pipes. The electronic system is based around a Raspberry Pi Zero 2, which handles communication, camera streaming and the higher-level software.
+PipeGuard uses a compact articulated structure designed to navigate through pipe networks and around tight bends. An adjustable clamping mechanism presses the robot against the pipe wall and allows it to adapt to different pipe diameters, while omnidirectional wheels and rubber elements provide mobility, contact and stability. A camera with integrated lighting provides visibility in dark pipe environments, and the electronic system is based around a Raspberry Pi Zero 2 that handles communication, camera streaming and the higher-level software.
 
 ### Key features
 
@@ -67,11 +61,7 @@ A camera with integrated lighting provides visibility inside dark pipes. The ele
 
 ## Software and control
 
-The software combines **motor control, camera streaming, sensor acquisition, communication and data logging**.
-
-The robot communicates over a local wireless network. Commands and status information are exchanged using TCP/IP, while the camera provides a live MJPEG video stream to the operator.
-
-A basic image-processing approach based on shadow detection was also developed to estimate the direction of the pipe and support autonomous navigation.
+The software combines **motor control, camera streaming, sensor acquisition, communication and data logging**. The robot communicates over a local wireless network, with commands and status information exchanged through TCP/IP and the camera image streamed as MJPEG video. A basic image-processing approach based on shadow detection was also developed to estimate the direction of the pipe and support autonomous navigation.
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
@@ -84,16 +74,8 @@ A basic image-processing approach based on shadow detection was also developed t
 
 ## Prototype testing
 
-The prototype was tested in a controlled pipe system to evaluate its mobility and inspection capabilities.
-
-PipeGuard successfully travelled through a **90° bend** and was able to climb vertically inside a pipe. The live camera feed also allowed visible defects to be identified during operation.
-
-The tests highlighted several areas for further development, particularly more robust autonomous navigation and improved mechanical reliability for demanding pipe geometries.
+The prototype was tested in a controlled pipe system to evaluate its mobility and inspection capabilities. PipeGuard successfully travelled through a **90° bend**, was able to climb vertically inside a pipe and provided a live camera feed that allowed visible defects to be identified during operation. The tests also highlighted areas for further development, particularly more robust autonomous navigation and improved mechanical reliability for demanding pipe geometries.
 
 ## Outcome
 
-PipeGuard demonstrated the core concept of a **mobile robotic pipe inspection system**.
-
-The project brought together mechanical design, embedded systems, computer vision, networking and sensor technology in a single working prototype.
-
-Future development could extend the platform with improved autonomous navigation, automatic defect recognition and additional inspection sensors.
+PipeGuard demonstrated the concept of a **mobile robotic pipe inspection system** that combines mechanical design, embedded systems, computer vision, networking and sensor technology in a single working prototype. Future development could extend the platform with more robust autonomous navigation, automatic defect recognition and additional inspection sensors.
