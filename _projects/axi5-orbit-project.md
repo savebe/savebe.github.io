@@ -1,12 +1,13 @@
 ---
+
 layout: page
 title: AXI5 ORBIT - 5-Axis FDM Printer
-description: A functional 5-axis FDM printer prototype — CAD, mechatronics, firmware and validation (bachelor thesis)
+description: Development and realisation of a functional 5-axis FDM printer
 img: assets/img/Projects/AXI5_ORBIT/title.png
 importance: 1
 date: 2026-06-05
 tags: [5-axis printing, FDM, mechatronics, mechanical design, firmware]
----
+-----------------------------------------------------------------------
 
 <div class="row justify-content-sm-center">
     <div class="col-sm mt-3 mt-md-0">
@@ -14,52 +15,60 @@ tags: [5-axis printing, FDM, mechatronics, mechanical design, firmware]
     </div>
 </div>
 <div class="caption">
-    AXI5 ORBIT — a compact 5-axis FDM printer built as a bachelor thesis prototype.
+    AXI5 ORBIT — a functional 5-axis FDM printer developed at ZHAW.
 </div>
 
-AXI5 ORBIT is a compact 5-axis FDM printer built as a functional bachelor thesis prototype. The project started from an earlier mechanical, electrical and software concept and focused on turning it into a real machine: revising the CAD, manufacturing and assembling the mechanical parts, wiring the electronics, configuring the firmware and validating the complete system with structured tests.
+AXI5 ORBIT is a **5-axis FDM printer** developed and built as part of our bachelor thesis at ZHAW.
 
-The goal was not just to add two extra axes to a printer, but to create a working platform for multi-axis additive manufacturing. By combining the normal X, Y and Z movements with a tilting A-axis and a continuously rotating C-axis build platform, the printer can change the orientation between nozzle and part during printing.
+The project combines mechanical design, electronics, control engineering and firmware development into one complete mechatronic system. In addition to the conventional X, Y and Z movements, the build platform can **tilt around the A-axis and continuously rotate around the C-axis**.
+
+This allows the orientation between the nozzle and the printed part to change and creates a platform for experimenting with **multi-axis and non-planar FDM printing**.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Projects/AXI5_ORBIT/cad-kinematics-overview.jpg" title="CAD overview of the 5-axis kinematics" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/Projects/AXI5_ORBIT/cad-kinematics-overview.jpg" title="CAD overview of AXI5 ORBIT" class="img-fluid rounded z-depth-1" %}
     </div>
-</div>
-<div class="caption">
-    CAD overview of the 5-axis kinematics.
-</div>
-
-## What we built
-
-The final prototype is based on a Voron-style CoreXY structure with an actively moving build platform. The print bed can rotate around the C-axis and tilt around the A-axis, while the printhead remains compact and lightweight. The mechanical design uses a mix of aluminium, SLS PA12 and FDM-printed parts to balance stiffness, weight and manufacturability.
-
-The electrical system is built around a Duet 3 6HC controller, a Duet 3 Roto Toolboard on the printhead and Duet 3 1XD expansion boards for the rotary axes. The A- and C-axis are driven by Maxon BLDC motors with EPOS2 70/10 motor controllers and encoder feedback. RepRapFirmware was configured and extended with custom macros for homing, probing, bed alignment and rotary-axis referencing.
-
-<div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/Projects/AXI5_ORBIT/prototype-front-view.jpg" title="Realised AXI5 ORBIT prototype" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    The realised AXI5 ORBIT prototype.
+    From CAD design to the realised prototype.
 </div>
 
-## Key technical points
+## From concept to machine
 
-- 5-axis setup: X, Y, Z plus A-axis tilt and continuous C-axis rotation
-- Linear workspace: 200 x 200 x 200 mm
-- Control system: Duet 3 6HC with RepRapFirmware and Duet Web Control
-- Rotary drives: Maxon BLDC motors with EPOS2 controllers and MILE encoder feedback
-- Toolhead: lightweight direct-drive printhead with E3D Revo PZ Probe and non-planar nozzle
-- Homing concept: multi-stage sequence using sensorless rough homing and probe-based fine referencing
-- Bed system: heated rotating build plate with slip ring for continuous C-axis rotation
+Our work focused on turning an existing concept into a **fully functional prototype**.
 
-## Validation and results
+We revised the CAD, manufactured and assembled the mechanical components, integrated the electronics and motors and configured the complete control system. We also developed the firmware routines required for homing, probing, gantry alignment and referencing the additional rotary axes.
 
-After commissioning, all five axes could be moved individually and in combined movements. The complete homing sequence was successfully executed in all five test runs. The PZ Probe showed good repeatability in Z, while side probing was less repeatable at some measurement points.
+The final machine is based on a CoreXY structure with an actively moving build platform. The printer is controlled using a Duet 3 system, while Maxon BLDC motors with encoder feedback drive the A- and C-axes.
 
-The A-axis reached the required range from -90° to +90°, but showed a maximum measured angular deviation of 1.77°. The C-axis performed better, with deviations between about -0.24° and +0.18° over 0° to 360°, and no increasing drift after multiple full rotations.
+### Key features
+
+* **5 controlled axes:** X, Y, Z, A and C
+* **200 × 200 × 200 mm** linear workspace
+* A-axis movement from **-90° to +90°**
+* Continuous C-axis rotation
+* Encoder-controlled BLDC drives for the rotary axes
+* Heated rotating build platform with slip ring
+* Automatic homing, probing and gantry alignment
+* E3D Revo PZ Probe and non-planar nozzle
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-8 mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Projects/AXI5_ORBIT/prototype-front-view.jpg" title="AXI5 ORBIT prototype" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    The completed AXI5 ORBIT prototype.
+</div>
+
+## Testing the system
+
+After commissioning, all five axes could be controlled individually and in coordinated movements. We tested the homing sequence, positioning of the rotary axes, probing system and temperature control before moving on to the first prints.
+
+These tests also helped identify areas for further development, particularly the positioning accuracy and mechanical behaviour of the A-axis.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -70,12 +79,14 @@ The A-axis reached the required range from -90° to +90°, but showed a maximum 
     </div>
 </div>
 <div class="caption">
-    Left: measured A-axis angle deviation. Right: thermal behaviour of the bed and nozzle.
+    Selected measurements from the validation of the prototype.
 </div>
 
-Thermal testing showed that the bed and nozzle reached their target temperatures and could run for 60 minutes. The nozzle stayed stable around its setpoint, while the bed showed a visible periodic temperature fluctuation.
+## First prints
 
-The printer completed a conventional 3-axis Benchy print and a first 5-axis demonstration print. The 3-axis print was usable but showed more stringing and slightly weaker overhangs than the Voron reference print. The 5-axis demonstration confirmed that extrusion, temperature control, G-code processing and the additional rotary-axis motions can work together in one print process.
+The printer was first tested using conventional 3-axis printing before attempting a **5-axis demonstration print**.
+
+The 5-axis print showed that extrusion, temperature control, G-code processing and movement of the additional rotary axes could work together within one print process.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -86,15 +97,23 @@ The printer completed a conventional 3-axis Benchy print and a first 5-axis demo
     </div>
 </div>
 <div class="caption">
-    Left: Benchy comparison against the Voron reference. Right: the first 5-axis demonstration print.
+    Conventional 3-axis printing and the first 5-axis demonstration print.
 </div>
+
+## Further development
+
+After completing the bachelor thesis, we continued improving the printer.
+
+A major focus was the **A-axis drivetrain and position control**. The encoder feedback was moved directly to the axis so that the actual platform position could be measured more accurately. The belt transmission was redesigned using stiffer timing belts and the motor control was retuned for the modified mechanical system.
+
+The firmware and homing routines were also adapted to the new setup, followed by additional movement and print tests.
 
 ## Outcome
 
-AXI5 ORBIT was successfully realised as a functional 5-axis FDM printer prototype. The project proves that the mechanical, electrical and software subsystems can work together as one machine and that the additional rotary axes can be included in real print movements.
+AXI5 ORBIT became a **functional 5-axis FDM research prototype** and a platform for further development of multi-axis additive manufacturing.
 
-At the same time, the tests showed clear next steps: improving the A-axis accuracy, reducing vibrations of the tilting bed structure, tuning the heated bed control and developing a complete process chain for true 5-axis toolpaths. The prototype therefore forms a strong base for further work on non-planar and multi-axis FDM printing.
+The project covered the complete development of a complex mechatronic system — from CAD and manufacturing to electronics, firmware, control engineering, commissioning and finally the first multi-axis prints.
 
 ---
 
-Images and project information are based on the bachelor thesis report _Bau eines neuartigen 5-Achs-FDM-Druckers_ by Samuel Benz and Lorenz Limacher, ZHAW School of Engineering, 05.06.2026.
+Developed by **Samuel Benz and Lorenz Limacher** at the ZHAW School of Engineering as part of the bachelor thesis *Bau eines neuartigen 5-Achs-FDM-Druckers* and subsequently developed further.
