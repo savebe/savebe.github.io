@@ -1,19 +1,16 @@
 ---
-
 layout: page
-title: "AXI5 ORBIT - 5-Axis FDM Printer"
-description: "Concept, development and realisation of a functional 5-axis FDM printer"
+title: "Development of a Novel 5-Axis FDM Printer"
+description: "Concept, development and realisation of the AXI5 ORBIT 5-axis FDM printer"
 img: "assets/img/Projects/AXI5_ORBIT/title.png"
 importance: 1
 date: 2026-06-05
 tags:
-
-* 5-axis printing
-* FDM
-* mechatronics
-* mechanical design
-* firmware
-
+  - 5-axis printing
+  - FDM
+  - mechatronics
+  - mechanical design
+  - firmware
 ---
 
 <div class="row justify-content-sm-center">
