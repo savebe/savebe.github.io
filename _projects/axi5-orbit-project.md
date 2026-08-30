@@ -1,16 +1,19 @@
 ---
+
 layout: page
 title: "AXI5 ORBIT - 5-Axis FDM Printer"
-description: "Development and realisation of a functional 5-axis FDM printer"
+description: "Concept, development and realisation of a functional 5-axis FDM printer"
 img: "assets/img/Projects/AXI5_ORBIT/title.png"
 importance: 1
 date: 2026-06-05
 tags:
-  - 5-axis printing
-  - FDM
-  - mechatronics
-  - mechanical design
-  - firmware
+
+* 5-axis printing
+* FDM
+* mechatronics
+* mechanical design
+* firmware
+
 ---
 
 <div class="row justify-content-sm-center">
@@ -24,9 +27,9 @@ tags:
 
 AXI5 ORBIT is a **5-axis FDM printer** developed and built as part of our bachelor thesis at ZHAW.
 
-The project combines mechanical design, electronics, control engineering and firmware development into one complete mechatronic system. In addition to the conventional X, Y and Z movements, the build platform can **tilt around the A-axis and continuously rotate around the C-axis**.
+The project covered the development of the machine from the **initial concept to a fully functional prototype**, combining mechanical design, electronics, control engineering and firmware development into one complete mechatronic system.
 
-This allows the orientation between the nozzle and the printed part to change and creates a platform for experimenting with **multi-axis and non-planar FDM printing**.
+In addition to the conventional X, Y and Z movements, the build platform can **tilt around the A-axis and continuously rotate around the C-axis**. This allows the orientation between the nozzle and the printed part to change and creates a platform for experimenting with **multi-axis and non-planar FDM printing**.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -37,14 +40,16 @@ This allows the orientation between the nozzle and the printed part to change an
     </div>
 </div>
 <div class="caption">
-    From CAD design to the realised prototype.
+    From concept and CAD design to the realised prototype.
 </div>
 
 ## From concept to machine
 
-Our work focused on turning an existing concept into a **fully functional prototype**.
+We developed the **overall concept and architecture of the printer** and carried it through to a fully functional prototype.
 
-We revised the CAD, manufactured and assembled the mechanical components, integrated the electronics and motors and configured the complete control system. We also developed the firmware routines required for homing, probing, gantry alignment and referencing the additional rotary axes.
+This included the kinematic and mechanical concept, CAD design, manufacturing and assembly of the mechanical components, integration of the electronics and motors, and configuration of the complete control system.
+
+We also developed the firmware routines required for homing, probing, gantry alignment and referencing the additional rotary axes.
 
 The final machine is based on a CoreXY structure with an actively moving build platform. The printer is controlled using a Duet 3 system, while Maxon BLDC motors with encoder feedback drive the A- and C-axes.
 
@@ -73,8 +78,6 @@ The final machine is based on a CoreXY structure with an actively moving build p
 After commissioning, all five axes could be controlled individually and in coordinated movements. We tested the homing sequence, positioning of the rotary axes, probing system and temperature control before moving on to the first prints.
 
 These tests also helped identify areas for further development, particularly the positioning accuracy and mechanical behaviour of the A-axis.
-
-
 
 ## First prints
 
@@ -106,8 +109,8 @@ The firmware and homing routines were also adapted to the new setup, followed by
 
 AXI5 ORBIT became a **functional 5-axis FDM research prototype** and a platform for further development of multi-axis additive manufacturing.
 
-The project covered the complete development of a complex mechatronic system — from CAD and manufacturing to electronics, firmware, control engineering, commissioning and finally the first multi-axis prints.
+The project covered the complete development process of a complex mechatronic system — from the **initial concept and system architecture through CAD, manufacturing, electronics and firmware to commissioning and the first multi-axis prints**.
 
 ---
 
-Developed by **Samuel Benz and Lorenz Limacher** at the ZHAW School of Engineering as part of the bachelor thesis *Bau eines neuartigen 5-Achs-FDM-Druckers* and subsequently developed further.
+Developed by **Samuel Benz and Lorenz Limacher** at the ZHAW School of Engineering as part of the bachelor thesis *Development of a Novel 5-Axis FDM Printer* and subsequently developed further.
