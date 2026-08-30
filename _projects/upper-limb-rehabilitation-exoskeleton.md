@@ -24,9 +24,7 @@ tags:
     Compact upper-limb rehabilitation exoskeleton developed as an engineering project.
 </div>
 
-This project focused on the development of a compact **upper-limb rehabilitation exoskeleton** designed to support arm movement during rehabilitation exercises.
-
-The goal was to create a lightweight and low-cost device that could assist the user while lifting a load, while remaining compact enough to be disassembled and stored easily.
+This project focused on the development of a compact **upper-limb rehabilitation exoskeleton** designed to support arm movement during rehabilitation exercises. The goal was to create a lightweight and low-cost device that could assist the user while lifting a load, while remaining compact enough to be adjusted, disassembled and stored easily.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -42,9 +40,7 @@ The goal was to create a lightweight and low-cost device that could assist the u
 
 ## Mechanical concept
 
-The exoskeleton was designed around the elbow joint and uses a compact **capstan-drive mechanism** to support the arm.
-
-A two-stage timing belt transmission increases the available torque while keeping the actuator close to the joint. Adjustable rail components allow the structure to adapt to different arm lengths and make the device easier to disassemble for storage.
+The exoskeleton was designed around the elbow joint and uses a compact **capstan-drive mechanism** to support the arm. A two-stage timing belt transmission increases the available torque while keeping the actuator close to the joint, while adjustable rail components allow the structure to adapt to different arm lengths and make the device easier to disassemble for storage.
 
 ### Key features
 
@@ -66,13 +62,9 @@ A two-stage timing belt transmission increases the available torque while keepin
 
 ## FEA optimization
 
-My main focus within the project was the **structural optimization of a load-bearing component** of the capstan drive.
+My main focus within the project was the **structural optimization of a load-bearing component** of the capstan drive. The part transfers forces between the belt drive, bearings and the forearm structure, so it had to remain strong while also being lightweight and suitable for additive manufacturing.
 
-The part transfers forces between the belt drive, bearings and the forearm structure, so it had to remain strong while being lightweight and suitable for 3D printing.
-
-Using Ansys, the component was analyzed under the expected forces, moments and bearing loads. The resulting stress distribution was then used to iteratively improve the geometry.
-
-Material was removed from low-stress regions while critical areas were reinforced, resulting in a more efficient design without changing the important mechanical interfaces.
+Using Ansys, the component was analyzed under the expected forces, moments and bearing loads. The resulting stress distribution was used to iteratively improve the geometry by removing material from low-stress regions and reinforcing critical areas, resulting in a more efficient structure without changing the important mechanical interfaces.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -88,6 +80,4 @@ Material was removed from low-stress regions while critical areas were reinforce
 
 ## Outcome
 
-The project combined **mechanical design, force calculations, drivetrain development, finite element analysis and design for additive manufacturing**.
-
-It demonstrated how simulation can be used to improve a functional mechanical component before production and how structural design often requires balancing strength, weight, compactness and manufacturability.
+The project combined **mechanical design, force calculations, drivetrain development, finite element analysis and design for additive manufacturing**. It demonstrated how simulation can be used to improve a functional mechanical component before production and how structural design often requires balancing strength, weight, compactness and manufacturability.
