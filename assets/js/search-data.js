@@ -30,9 +30,9 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "projects-",
-          title: '',
-          description: "",
+        },{id: "projects-development-of-a-novel-5-axis-fdm-printer",
+          title: 'Development of a Novel 5-Axis FDM Printer',
+          description: "Concept, development and realisation of the AXI5 ORBIT 5-axis FDM printer",
           section: "Projects",handler: () => {
               window.location.href = "/projects/axi5-orbit-project/";
             },},{id: "projects-pipeguard-robotics",
