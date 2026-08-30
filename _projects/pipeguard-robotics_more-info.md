@@ -4,6 +4,12 @@ title: "PipeGuard Robotics"
 description: "Autonomous pipe inspection robot with real-time video and sensor feedback"
 img: "assets/img/Projects/PipeGuerd/inpipe.png"
 importance: 2
+tags:
+  - robotics
+  - embedded systems
+  - computer vision
+  - mechanical design
+  - Raspberry Pi
 ---
 
 <div class="row justify-content-sm-center">
