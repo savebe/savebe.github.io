@@ -13,12 +13,22 @@ tags:
   - firmware
 ---
 <div class="row justify-content-sm-center">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Projects/AXI5_ORBIT/title.png" title="AXI5 ORBIT prototype" class="img-fluid rounded z-depth-1" %}
+    <div class="col-sm-10 mt-3 mt-md-0">
+        <video
+            controls
+            playsinline
+            preload="metadata"
+            poster="/assets/img/Projects/AXI5_ORBIT/title.png"
+            class="img-fluid rounded z-depth-1"
+        >
+            <source src="/assets/video/AXI5_ORBIT_VIDEO.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 </div>
+
 <div class="caption">
-    AXI5 ORBIT — a functional 5-axis FDM printer developed at ZHAW.
+    AXI5 ORBIT — project showcase.
 </div>
 
 AXI5 ORBIT is a **5-axis FDM printer** developed and built as part of our bachelor thesis at ZHAW. The project covered the development of the machine from the **initial concept to a fully functional prototype**, combining mechanical design, electronics, control engineering and firmware development into one complete mechatronic system. In addition to the conventional X, Y and Z movements, the build platform can **tilt around the A-axis and continuously rotate around the C-axis**, allowing the orientation between the nozzle and the printed part to change during printing and creating a platform for experimenting with **multi-axis and non-planar FDM printing**.
@@ -52,7 +62,7 @@ We developed the **overall concept and architecture of the printer** and carried
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Projects/AXI5_ORBIT/prototype-front-view.jpg" title="AXI5 ORBIT prototype" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/Projects/AXI5_ORBIT/title.png" title="AXI5 ORBIT prototype" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
